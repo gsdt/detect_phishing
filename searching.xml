@@ -1,0 +1,14 @@
+<search>
+    <site>
+        <url>facebook.com</url>
+        <string>Đăng nhập Facebook</string>
+    </site>
+    <site>
+        <url>facebook.com</url>
+        <string>Đăng ký Facebook</string>
+    </site>
+    <site>
+        <url>https://accounts.google.com/signin/v2/identifier</url>
+        <string>with your Google Account</string>
+    </site>
+</search>
