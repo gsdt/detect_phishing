@@ -70,7 +70,7 @@ def detect_html_code(html_code):
         return jsonify({
             'error_code': 2,
             'message': 'This is not a login site.',
-            'result': 'SAFE'
+            'result': 'NOT LOGIN'
         })
 
 

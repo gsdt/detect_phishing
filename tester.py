@@ -1,7 +1,7 @@
 import requests
 
-url = "http://localhost:5000/api/phishing"
-url_report = "http://localhost:5000/api/report"
+url = "http://35.190.183.74:5000/api/phishing"
+url_report = "http://35.190.183.74:5000/api/report"
 
 
 r = requests.Session()
@@ -13,8 +13,8 @@ data = {
     'contents': html_code
 }
 # test detect phishing
-# response = r.post(url, data=data).text
+response = r.post(url, data=data).text
 
 # test report phishing
-response = r.post(url_report, data={'type' :'DIRTY', 'url': 'fake.com'}).text
+# response = r.post(url_report, data={'type' :'DIRTY', 'url': 'fake.com'}).text
 print(response)
