@@ -22,26 +22,43 @@
 
 # To use api
 1. Check URL
+
     *Request*
-        -   type = `url`
-        -   contents = `fakesite.com`
+
+        - type = `url`
+        - contents = `fakesite.com`
+
     *Response*
-        -   error_code:
-        -   message:
-        -   result: `NOT FOUND/ DIRTY/ SAFE`
+
+        - error_code:
+        - message:
+        - result: `NOT FOUND/ DIRTY/ SAFE`
+
 2. Check html
+
     *Request*
-        -   type = `html_code`
-        -   contents = `<html>...</html>`
+
+        - type = `html_code`
+        - contents = `<html>...</html>`
+
     *Response*
-        -   error_code:
-        -   message:
-        -   result: `NOT LOGIN/ DIRTY/ SAFE`
+
+        - error_code:
+        - message:
+        - result: `NOT LOGIN/ DIRTY/ SAFE`
+
 3. Report
+
     *Request*
-        -   type = `DIRTY`
-        -   url = `fakebook.com`
+
+        - type = `DIRTY`
+        - url = `fakebook.com`
+
     *Response*
-        -   error_code: `0 / 3`
-        -   message: `report success/ More than 10 people report this site`
-        -   counter : counter number of users report this site
+
+        - error_code: `0 / 3`
+        - message: `report success/ More than 10 people report this site`
+        - counter : counter number of users report this site
+
+
+        
