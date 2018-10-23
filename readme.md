@@ -21,7 +21,7 @@
     ```
 
 # To use api
-1. Check URL
+1. Check URL (http://server:5000/api/phising)
 
     *Request*
 
@@ -34,7 +34,7 @@
         - message:
         - result: `NOT FOUND/ DIRTY/ SAFE`
 
-2. Check html
+2. Check html (http://server:5000/api/phising)
 
     *Request*
 
@@ -47,7 +47,7 @@
         - message:
         - result: `NOT LOGIN/ DIRTY/ SAFE`
 
-3. Report
+3. Report (http://server:5000/api/report)
 
     *Request*
 
@@ -61,4 +61,3 @@
         - counter : counter number of users report this site
 
 
-        
