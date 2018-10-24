@@ -20,6 +20,13 @@ def detect_url(url):
     result = Database.search_host(host)
     res = dict()
     if(result == 'NOT FOUND'):
+        number_of_report = Database.counter_report(url, 'DIRTY', request.remote_addr)
+        if number_of_report >= 10:
+            return jsonify({
+                'error_code': 0,
+                'message': number_of_report,
+                'result' : 'REPORTED'
+            })
         return jsonify({
             'error_code': 1,
             'message': 'this url not in our database. please send the html_code to server',
@@ -85,7 +92,8 @@ def phishing():
 
 @app.route('/api/report', methods=['POST'])
 def report():
-    counter = Database.insert_report(request.form['url'],request.form['type'],request.remote_addr)
+    Database.insert_report(request.form['url'],request.form['type'],request.remote_addr)
+    counter = Database.counter_report(request.form['url'],request.form['type'],request.remote_addr)
     if counter >= 10:
         return jsonify({
             'error_code': 3,

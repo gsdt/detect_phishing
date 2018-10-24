@@ -1,3 +1,14 @@
+# About this project
+1. About
+    Project for IAA
+2. Thanks
+    Nguyen Anh Tuan
+    Nguyen Huu Dung
+    Nguyen Quoc Anh
+    Nguyen Xuan Hoa
+    Nguyen Quang Dam
+    Nguyen The Lam
+
 # To run this project
 1. Requirement
     - Linux (other OS version haven't been tested.)
@@ -32,7 +43,7 @@
 
         - error_code:
         - message:
-        - result: `NOT FOUND/ DIRTY/ SAFE`
+        - result: `NOT FOUND/ DIRTY/ SAFE/ REPORTED`
 
 2. Check html (http://server:5000/api/phising)
 

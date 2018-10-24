@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
+from urllib.parse import urlparse
+import sys
+
+
 def getHost(url):
-	l = url.split("/")
-	if l[0].find("http") == -1:
-		if l[0][:3] =="www":
-			return (l[0][4:])
-		else:
-			return(l[0])
-	else:
-		return (l[2])
+	parser = urlparse(url)
+	return parser.hostname
+
+if __name__ == "__main__":
+	print(getHost("https://docs.python.org/3/library/urllib.parse.html"))
+	

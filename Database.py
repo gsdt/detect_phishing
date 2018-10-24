@@ -77,15 +77,21 @@ def insert_report(url,type,userIP):
     cursor.execute(sql %values)
     myConnection.commit()
 
-    sql = "select count(distinct (UserIP)) as cnt from REPORT where type = 'DIRTY' and host= '{0}'".format(host)
-    cursor.execute(sql)
-    result, =cursor.fetchone()
-    
     myConnection.close()
     cursor.close()
 
-    return result
+def counter_report(url, type, userIP):
+    myConnection = config.getConnection()
+    cursor = myConnection.cursor()
 
+    host = Helper.getHost(url).strip()
+    sql = "select count(distinct (UserIP)) as cnt from REPORT where type = 'DIRTY' and host= '{0}'".format(host)
+    cursor.execute(sql)
+    result, =cursor.fetchone()    
+    
+    myConnection.close()
+    cursor.close()
+    return result
 
 def search_host(host):
     myConnection = config.getConnection()

@@ -9,8 +9,8 @@ def getConnection():
 	myConnection = mysql.connector.connect( host=hostname, user=username, passwd=password, db=database )
 	return myConnection
 
-BLACK_LIST = "raw_data/TotalBlackList.txt"
-WHITE_LIST = "raw_data/opendns-top-domains.txt"
+BLACK_LIST = "raw_data/newBlack.txt"
+WHITE_LIST = "raw_data/newWhite.txt"
 
 
 # def getBlackListPointer():

@@ -12,6 +12,10 @@ data = {
     'type' : 'html_code',
     'contents': html_code
 }
+data = {
+    'type' : 'url',
+    'contents': 'https://www.facebook.com'
+}
 # test detect phishing
 response = r.post(url, data=data).text
 
