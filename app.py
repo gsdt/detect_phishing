@@ -12,6 +12,7 @@ import Database
 import Helper
 import mysql.connector
 import site_type
+import machine_learning_model
 
 app = Flask(__name__)
 
@@ -26,6 +27,15 @@ def detect_url(url):
                 'error_code': 0,
                 'message': number_of_report,
                 'result' : 'REPORTED'
+            })
+        machine_learning = machine_learning_model.machine_leanring()
+        machine_learning.load_model(tokenizerFolder="pretrained_models", savedModelDirectory="pretrained-models")
+        result = machine_learning.predict(websiteToTest=url, threshold=0.5)
+        if result == "PHISHING":
+            return jsonify({
+                'error_code': 0,
+                'message': number_of_report,
+                'result' : 'DIRTY'
             })
         return jsonify({
             'error_code': 1,
